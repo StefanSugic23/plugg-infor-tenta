@@ -230,7 +230,102 @@ form.addEventListener("submit", function(event) {
     // Vi kör render() för att visa den uppdaterade arrayen i HTML.
     render();
 
+    nameInput.value =""
+    ageInput.value=""
+    errorMsg.textContent=""
+
     // OBS: Din ursprungliga kod tömmer inte formuläret
     // och tar inte bort felmeddelandet efter en lyckad inskickning.
 
 }); // Här slutar submit-eventet.
+
+
+// Array och strängoperationer
+
+// Skapar en sträng med mellanslag före och efter namnet
+const namnet = "       STEFanovich             ";
+
+// Tar bort mellanslag i början och slutet av strängen
+const nametrimmad = namnet.trim();
+
+// Skriver ut strängen utan mellanslag i början och slutet
+console.log(nametrimmad);
+
+// Gör om alla bokstäver i strängen till små bokstäver
+const nameLower = nametrimmad.toLowerCase();
+
+// Skriver ut namnet med små bokstäver
+console.log(nameLower);
+
+// Gör om alla bokstäver i strängen till stora bokstäver
+const nameUpper = nametrimmad.toUpperCase();
+
+// Skriver ut namnet med stora bokstäver
+console.log(nameUpper);
+
+
+// Skapar en sträng med tre namn separerade av kommatecken och mellanslag
+const splitName = "Stefan, Stefanovich, Sugic";
+
+// Delar upp strängen vid varje ", " och skapar en array med tre element
+const splittad = splitName.split(", ");
+
+// Skriver ut arrayen: ["Stefan", "Stefanovich", "Sugic"]
+console.log(splittad);
+
+// Slår ihop arrayens element till en sträng med ", " mellan varje element
+const joined = splittad.join(", ");
+
+// Skriver ut den sammanslagna strängen
+console.log(joined);
+
+
+// Skapar en array med sex nummer
+let array = [3, 4, 5, 6, 1, 2];
+
+// Skriver ut hela arrayen
+console.log(array);
+
+
+// Tar bort det sista elementet i arrayen, alltså 2
+array.pop();
+
+// Skriver ut arrayen efter att 2 har tagits bort
+console.log(array); // [3, 4, 5, 6, 1]
+
+
+// Tar bort ett element från index 3
+// Det tredje argumentet saknas, så ett element tas bort
+// Index 3 innehåller talet 6
+array.splice(3, 1);
+
+// Skriver ut arrayen efter borttagningen
+console.log(array); // [3, 4, 5, 1]
+
+
+// Söker efter talet 3 och returnerar dess index
+console.log(array.indexOf(3)); // 0
+
+// Söker efter talet 99, som inte finns i arrayen
+// Returnerar -1 eftersom elementet saknas
+console.log(array.indexOf(99)); // -1
+
+
+// Kontrollerar om talet 3 finns i arrayen
+// Returnerar true eftersom talet finns
+console.log(array.includes(3)); // true
+
+// Kontrollerar om talet 99 finns i arrayen
+// Returnerar false eftersom talet saknas
+console.log(array.includes(99)); // false
+
+
+// Returnerar en ny array från index 1 upp till, men inte inklusive, index 3
+// Innehåller elementen på index 1 och 2: 4 och 5
+console.log(array.slice(1, 3)); // [4, 5]
+
+// Returnerar en ny array från index 3 till slutet
+// Originalarrayen ändras inte av slice()
+console.log(array.slice(3)); // [1]
+
+
